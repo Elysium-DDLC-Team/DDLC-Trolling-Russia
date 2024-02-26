@@ -64,43 +64,6 @@ init python:
         for savegame in renpy.list_saved_games(fast=True):
             renpy.unlink_save(savegame)
 
-    # This function deletes a given character name from the characters folder.
-    def delete_character(name):
-        if renpy.android:
-            try: os.remove(os.environ['ANDROID_PUBLIC'] + "/characters/" + name + ".chr")
-            except: pass
-        else:
-            try: os.remove(config.basedir + "/characters/" + name + ".chr")
-            except: pass
-
-    # These functions restores all the character CHR files to the characters folder 
-    # given the playthrough number in the mod and list of characters to restore.
-    def restore_character(names):
-        if not isinstance(names, list):
-            raise Exception("'names' parameter must be a list. Example: [\"monika\", \"sayori\"].")
-
-        for x in names:
-            if renpy.android:
-                try: renpy.file(os.environ['ANDROID_PUBLIC'] + "/characters/" + x + ".chr")
-                except: open(os.environ['ANDROID_PUBLIC'] + "/characters/" + x + ".chr", "wb").write(renpy.file("chrs/" + x + ".chr").read())
-            else:
-                try: renpy.file(config.basedir + "/characters/" + x + ".chr")
-                except: open(config.basedir + "/characters/" + x + ".chr", "wb").write(renpy.file("chrs/" + x + ".chr").read())
-
-    def restore_all_characters():
-        if persistent.playthrough == 0:
-            restore_character(["monika", "sayori", "natsuki", "yuri"])
-        elif persistent.playthrough == 1 or persistent.playthrough == 2:
-            restore_character(["monika", "natsuki", "yuri"])
-        elif persistent.playthrough == 3:
-            restore_character(["monika"])
-        else:
-            restore_character(["sayori", "natsuki", "yuri"])
-    
-    # This function is obsolete as all characters now restores only
-    # relevant characters to the characters folder.
-    def restore_relevant_characters():
-        restore_all_characters()
 
     # This function pauses the time for a certain amount of time or indefinite.
     def pause(time=None):

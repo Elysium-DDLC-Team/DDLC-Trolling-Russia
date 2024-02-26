@@ -15,6 +15,8 @@ screen game_menu_m():
 screen game_menu(title, scroll=None):
 
     style_prefix "game_menu"
+    add "cg movie ricardo flexing":
+        zoom 1.5
 
     frame:
         style "game_menu_outer_frame"
@@ -105,7 +107,7 @@ style game_menu_content_frame:
     top_margin 10
 
 style game_menu_viewport:
-    xsize 920
+    xsize 1920
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable

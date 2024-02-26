@@ -64,11 +64,10 @@ image menu_logo:
     "/mod_assets/DDLCModTemplateLogo.png"
     # im.Composite((512, 512), (0, 0), recolorize("mod_assets/logo_bg.png"), (0, 0), "mod_assets/logo_fg.png")
     subpixel True
-    xcenter 240
-    ycenter 120
+    xcenter 360
+    ycenter 180
     zoom 0.60
     menu_logo_move
-
 # This image shows the main menu polka-dot image.
 image menu_bg:
     topleft
@@ -265,17 +264,6 @@ image warning:
     "white" with Dissolve(0.5, alpha=True)
     0.5
 
-## This init python statement checks if the character files are present in-game
-## and writes them to the characters folder depending on the playthrough.
-init python:
-    if not persistent.do_not_delete:
-        if renpy.android:
-            if not os.path.exists(os.path.join(os.environ['ANDROID_PUBLIC'], "characters")):
-                os.mkdir(os.path.join(os.environ['ANDROID_PUBLIC'], "characters"))
-        else:
-            if not os.path.exists(os.path.join(config.basedir, "characters")):
-                os.mkdir(os.path.join(config.basedir, "characters"))
-        restore_all_characters()
 
 ## These images are the background images shown in-game during the disclaimer.
 image tos = "bg/warning.png"
@@ -318,25 +306,6 @@ label splashscreen:
             user = os.environ.get(name)
             if user:
                 currentuser = user
-
-    ## This if statement checks if we have passed the disclaimer and that the
-    ## current version of the mod equals the old one or the autoload is set to 
-    ## the post-credit loop.
-    if persistent.first_run and (config.version == persistent.oldversion or persistent.autoload == "postcredits_loop"):
-        $ quick_menu = False
-        scene black
-
-        menu:
-            "A previous save file has been found. Would you like to delete your save data and start over?"
-            "Yes, delete my existing data.":
-                "Deleting save data...{nw}"
-                python:
-                    delete_all_saves()
-                    renpy.loadsave.location.unlink_persistent()
-                    renpy.persistent.should_save_persistent = False
-                    renpy.utter_restart()
-            "No, continue where I left off.":
-                $ restore_relevant_characters()
 
     if not persistent.lockdown_warning:
         if config.developer:

@@ -29,7 +29,8 @@ image bg house = Fixed("sky", paths.bg("street", "house")) # Meiji House BG
 image bg house rain = Fixed("sky_rain", paths.bg("street", "house_rain"))
 image bg school_gate = Fixed("sky", paths.bg("school", "school_gate_day")) # school gate BG
 image bg courtyard = Fixed("sky",  paths.bg("school", "courtyard_day")) # school courtyard BG
-image bg street day = Fixed("sky",  paths.bg("street", "street_day")) # school courtyard BG
+image bg street day:
+    Fixed("sky",  paths.bg("street", "street_day")) # school courtyard BG
 
 image bg test:
     Fixed("sky", paths.bg("street", "house"))
@@ -55,7 +56,7 @@ init python:
 
 
 # mod background's
-
+image cg movie ricardo flexing = Movie(play="mod_assets/videos/cg_flex1.webm", loops=-1)
 image black = "#000000"
 image dark = "#000000e4"
 image darkred = "#110000c8"

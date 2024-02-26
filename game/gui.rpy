@@ -8,7 +8,7 @@
 
 init -2 python:
     # This sets the resolution of DDLC to 1280x720p
-    gui.init(1280, 720)
+    gui.init(1920, 1080)
 
 ## GUI Sounds
 # These variables set the sound effects for the GUI elements in the game.
@@ -54,28 +54,28 @@ define -2 gui.interface_text_color = '#ffffff'
 define -2 gui.default_font = "gui/font/Aller_Ru.ttf"
 
 # This font is used for character names.
-define -2 gui.name_font = "gui/font/RifficFree-Bold.ttf"
+define -2 gui.name_font = "gui/font/Aller_Ru.ttf"
 
 # This font is used for out-of-game text.
 define -2 gui.interface_font = "gui/font/Aller_Ru.ttf"
 
 # The text size of normal dialogue text.
-define -2 gui.text_size = 24
+define -2 gui.text_size = 36
 
 # This determines the text size of character names.
-define -2 gui.name_text_size = 24
+define -2 gui.name_text_size = 36
 
 # This determines the text size of the game's user interface.
-define -2 gui.interface_text_size = 24
+define -2 gui.interface_text_size = 36
 
 # This determines the text size of the game's label in the user interface.
-define -2 gui.label_text_size = 28
+define -2 gui.label_text_size = 42
 
 # This determines the text size of the notification screen.
-define -2 gui.notify_text_size = 16
+define -2 gui.notify_text_size = 24
 
 # This determines the text size of the game's title on the bottom-right.
-define -2 gui.title_text_size = 38
+define -2 gui.title_text_size = 50
 
 ## Main Menu and Game Menu
 # These variables set what is shown in the game menu.
@@ -97,30 +97,30 @@ define -2 gui.textbox_height = 182
 define -2 gui.textbox_yalign = 0.99
 
 # This controls the placement of the speaking character's name.
-define gui.name_xpos = 350
-define gui.name_ypos = -3
+define gui.name_xpos = 525
+define gui.name_ypos = -95
 
 # This controls the horizontal alignment of the character's name.
 define gui.name_xalign = 0.5
 
 # This controls the width, height, and borders of the box containing the 
 # characters' name.
-define gui.namebox_width = 168
-define gui.namebox_height = 39
+define gui.namebox_width = 273
+define gui.namebox_height = 59
 
 # This controls the borders of the box containing the characters' name in 
 # left, top, right, and bottom order.
-define gui.namebox_borders = Borders(5, 5, 5, 2)
+define gui.namebox_borders = Borders(15, 15, 15, 2)
 
 # This controls the display of the frame containing the namebox.
 define gui.namebox_tile = False
 
 # This controls the placement of dialogue relative to the textbox.
-define gui.text_xpos = 268
-define gui.text_ypos = 62
+define gui.text_xpos = 402
+define gui.text_ypos = 5
 
 # This controls the maximum width of dialogue text.
-define gui.text_width = 744
+define gui.text_width = 1116
 
 # This controls the horizontal alignment of the dialogue text.
 define gui.text_xalign = 0.0
@@ -131,7 +131,7 @@ define gui.text_xalign = 0.0
 # This controls the width and height of a button. 
 # If None is declared, Ren'Py computes a size for it automatically.
 define gui.button_width = None
-define gui.button_height = 36
+define gui.button_height = 54
 
 # This controls the borders on each side of the button 
 # in left, top, right, bottom order.
@@ -172,7 +172,7 @@ define gui.page_button_borders = Borders(10, 4, 10, 4)
 ## Quick Buttons
 # These variables set the buttons in the quick menu and it's text.
 
-define gui.quick_button_text_size = 14
+define gui.quick_button_text_size = 21
 
 define gui.quick_button_text_idle_color = "#522"
 define gui.quick_button_text_hover_color = "#fcc"
@@ -230,8 +230,7 @@ define gui.notify_ypos = 45
 define gui.choice_spacing = 22
 
 # This controls the spacing between each navigation option in the navigation screen.
-define gui.navigation_spacing = 6
-
+define gui.navigation_spacing = 1
 # This controls the spacing between each preference and preference button option 
 # in the preference screen.
 define gui.pref_spacing = 10
@@ -304,16 +303,16 @@ define gui.history_height = None
 
 # This controls the position, width, and alignment of the characters' name in
 # the history menu.
-define gui.history_name_xpos = 150
+define gui.history_name_xpos = 295
 define gui.history_name_ypos = 0
-define gui.history_name_width = 150
+define gui.history_name_width = 295
 define gui.history_name_xalign = 1.0
 
 # This controls the position, width, and alignment of the characters' dialogue in
 # the history menu.
-define gui.history_text_xpos = 170
+define gui.history_text_xpos = 305
 define gui.history_text_ypos = 5
-define gui.history_text_width = 740
+define gui.history_text_width = 1110
 define gui.history_text_xalign = 0.0
 
 ## NVL
@@ -389,8 +388,8 @@ init python:
         gui.choice_button_width = 420
 
         ## Spacing
-        gui.navigation_spacing = 6
-        gui.pref_button_spacing = 10
+        gui.navigation_spacing = 1
+        gui.pref_button_spacing = 1
 
         ## History 
         gui.history_height = None
