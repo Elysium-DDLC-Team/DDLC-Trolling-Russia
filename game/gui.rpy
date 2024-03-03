@@ -84,7 +84,7 @@ define -2 gui.title_text_size = 50
 define -2 gui.main_menu_background = "menu_bg"
 
 # This sets background for the pause/game menu
-define -2 gui.game_menu_background = "game_menu_bg"
+define -2 gui.game_menu_background = "cg movie ricardo flexing"
 
 ## Dialogue
 # These variables set the dialogue box positions and placement in-game.
