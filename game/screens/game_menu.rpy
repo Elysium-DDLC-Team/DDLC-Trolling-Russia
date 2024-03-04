@@ -13,10 +13,10 @@ screen game_menu_m():
     timer 0.3 action Hide("game_menu_m")
 
 screen game_menu(title, scroll=None):
-
-    style_prefix "game_menu"
     add "cg movie ricardo flexing":
         zoom 1.5
+
+    style_prefix "game_menu"
 
     frame:
         style "game_menu_outer_frame"
@@ -123,7 +123,7 @@ style game_menu_label_text:
     font "gui/font/RifficFree-Bold.ttf"
     size gui.title_text_size
     color "#fff"
-    outlines [(6, text_outline_color, 0, 0), (3, text_outline_color, 2, 2)]
+    outlines [(6, "#d9d9d9", 0, 0), (2, "#f3f3f3", 2, 2)]
     #outlines [(6, "#b59", 0, 0), (3, "#b59", 2, 2)]
     yalign 0.5
 

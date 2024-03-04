@@ -37,7 +37,7 @@ default enable_languages = True
 
 # This controls the color of outlines in the game like
 # text, say, navigation, labels and such.
-define -2 text_outline_color = "#470004"
+define -2 text_outline_color = "#31709E"
 
 ## Styles
 ################################################################################

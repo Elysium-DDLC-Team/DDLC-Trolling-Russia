@@ -49,23 +49,23 @@ screen ddlc_preferences():
             vbox:
                 style_prefix "radio"
                 label _("Display")
-                textbutton _("Windowed") action Preference("display", "window")
-                textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                textbutton _("  Windowed") action Preference("display", "window")
+                textbutton _("  Fullscreen") action Preference("display", "fullscreen")
                 # textbutton _("More") action Show("display_options")
 
         if config.developer:
             vbox:
                 style_prefix "radio"
                 label _("Rollback Side")
-                textbutton _("Disable") action Preference("rollback side", "disable")
-                textbutton _("Left") action Preference("rollback side", "left")
-                textbutton _("Right") action Preference("rollback side", "right")
+                textbutton _("  Disable") action Preference("rollback side", "disable")
+                textbutton _("  Left") action Preference("rollback side", "left")
+                textbutton _("  Right") action Preference("rollback side", "right")
 
         vbox:
             style_prefix "check"
             label _("Skip")
-            textbutton _("Unseen Text") action Preference("skip", "toggle")
-            textbutton _("After Choices") action Preference("after choices", "toggle")
+            textbutton _("  Unseen Text") action Preference("skip", "toggle")
+            textbutton _("  After Choices") action Preference("after choices", "toggle")
             # textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
     
     null height (4 * gui.pref_spacing)
@@ -256,8 +256,8 @@ style pref_label:
 style pref_label_text:
     font "gui/font/SourceSansPro-Black.ttf"
     size 36
-    color "#fff"
-    outlines [(3, "#b59", 0, 0), (1, "#b59", 1, 1)]
+    color "#31709E"
+    outlines [(3, "#d9d9d9", 0, 0), (1, "#d9d9d9", 1, 1)]
     yalign 1.0
 
 style pref_vbox:
