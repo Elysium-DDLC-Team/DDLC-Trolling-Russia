@@ -32,6 +32,8 @@ image bg courtyard = Fixed("sky",  paths.bg("school", "courtyard_day")) # school
 image bg street day:
     Fixed("sky",  paths.bg("street", "street_day")) # school courtyard BG
 
+
+image bg besedka = Fixed("sky", paths.bg("bath", "bga"))
 image bg test:
     Fixed("sky", paths.bg("street", "house"))
     pause 0.001

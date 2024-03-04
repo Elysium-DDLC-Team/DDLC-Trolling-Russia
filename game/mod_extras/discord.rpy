@@ -41,7 +41,7 @@ init -950 python in discord:
 
             # Defines the largest image to use in rich presence as the
             # main icon.
-            self.large_image  = "ddlcmodtemplatelogo"
+            self.large_image  = "logo"
 
             # Defines the text when a user hovers on the large icon in
             # a players' status.
@@ -140,7 +140,7 @@ default discord.rollback_status = {}
 
 init -940 python:
     # Place your Discord RPC token inside the ""'s
-    RPC = discord.DiscordRPC("979471077187125248")
+    RPC = discord.DiscordRPC("985188356956774480")
 
     config.quit_callbacks += [RPC.close] 
     config.after_load_callbacks += [RPC.on_load]
