@@ -76,23 +76,23 @@ style navigation_button:
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
     font "gui/font/RifficFree-Bold.ttf"
-    color "#99000A"
-    outlines [(4, text_outline_color, 0, 0), (2, text_outline_color, 2, 2)]
-    #outlines [(4, "#b59", 0, 0), (2, "#b59", 2, 2)]
-    hover_outlines [(4, "#fac", 0, 0), (2, "#fac", 2, 2)]
-    insensitive_outlines [(4, "#fce", 0, 0), (2, "#fce", 2, 2)]
+    color "#31709E"
+    #outlines [(4, text_outline_color, 0, 0), (2, text_outline_color, 2, 2)]
+    outlines [(4, "#d9d9d9", 0, 0), (2, "#f3f3f3", 2, 2)]
+    hover_outlines [(4, "#aadeff", 0, 0), (2, "#aadeff", 2, 2)]
+    insensitive_outlines [(4, "#aadeff", 0, 0), (2, "#aadeff", 2, 2)]
 
 screen hover1:
-    text "{color=#FF0000}Нажми на эту кнопку и ты начнёшь незабываемую историю трех друзей." align(.75, .05) at show_clicks
+    text "{color=#0095FF}Click this button and you'll begin the unforgettable story of three friends!" align(.75, .05) at show_clicks
     
 screen hover2:
-    text "{color=#FF0000}Ты сможешь загрузится с того места, где закончил в прошлый раз." align(.75, .05) at show_clicks
+    text "{color=#0095FF}Ты сможешь загрузится с того места, где закончил в прошлый раз." align(.75, .05) at show_clicks
     
 screen hover3:
-    text "{color=#FF0000}Настрой свои ботинки, надень топовую красную бандану Рико,\nтрусы с флагом США и вперёд флексить!" align(.75, .05) at show_clicks
+    text "{color=#0095FF}Настрой свои ботинки, надень топовую красную бандану Рико,\nтрусы с флагом США и вперёд флексить!" align(.75, .05) at show_clicks
     
 screen hover4:
-    text "{color=#FF0000}Открытые треки." align(.75, .05) at show_clicks
+    text "{color=#0095FF}Открытые треки." align(.75, .05) at show_clicks
     
 transform show_clicks:
     zoom 1.00
