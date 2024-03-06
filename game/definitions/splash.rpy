@@ -63,11 +63,10 @@ image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign
 image menu_logo:
     "mod_assets/DDLCModTemplateLogo.png"
     # im.Composite((512, 512), (0, 0), recolorize("mod_assets/logo_bg.png"), (0, 0), "mod_assets/logo_fg.png")
-    subpixel True
+    subpixel False
     xcenter 360
     ycenter 180
-    zoom 0.60
-    menu_logo_move
+    #zoom 0.5
 # This image shows the main menu polka-dot image.
 image menu_bg:
     topleft

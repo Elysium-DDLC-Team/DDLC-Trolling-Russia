@@ -17,8 +17,8 @@ screen main_menu():
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
-    add "menu_logo"
     add "menu_fade"
+    add "menu_logo"
 
     if gui.show_name:
 
