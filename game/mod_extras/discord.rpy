@@ -37,11 +37,11 @@ init -950 python in discord:
 
             # State indicates additional information to details
             # Example: Browsing Settings
-            self.state = "Monika Is Watching You Code"
+            self.state = "Ricardo Is Watching You Code"
 
             # Defines the largest image to use in rich presence as the
             # main icon.
-            self.large_image  = "logo"
+            self.large_image  = "logo_tr"
 
             # Defines the text when a user hovers on the large icon in
             # a players' status.
@@ -50,10 +50,10 @@ init -950 python in discord:
 
             # Defines the smallest image to use in rich presence as the
             # secondary icon.
-            self.small_image = "test"
+            self.small_image = "elysium-logo"
             # Defines the text when a user hovers on the small icon in
             # a players' status.
-            self.small_text = config.version  # Uses the version name of the mod
+            self.small_text = "Made by Elysium Team" # Uses the version name of the mod
 
         def self_dict(self):
             return {
