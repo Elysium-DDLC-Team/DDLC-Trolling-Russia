@@ -2,6 +2,7 @@
 layeredimage monika base: 
     
     #at AutofocusDisplayable(name="monika", AutofocusDropShadow_blur=20, AutofocusColoring=True)
+    at Flatten
     
     always paths.monika("bases", "base", "face")
  
