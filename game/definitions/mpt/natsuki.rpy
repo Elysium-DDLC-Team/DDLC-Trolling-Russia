@@ -179,18 +179,24 @@ image nat_fs_b3:
     paths.natsuki("brows", "fs", "b3")
 
 
-layeredimage natsuki turned:
+layeredimage natsuki base:
     
     #This makes the sprite one single texture, instead of multiple textures on top of each other.
     #This fixes certain problems like alpha fadein/fadeout looking strange, at the cost of some performance.
-    at AutofocusDisplayable(name="natsuki", AutofocusDropShadow_blur=20, AutofocusColoring=True)
+    #at AutofocusDisplayable(name="natsuki", AutofocusDropShadow_blur=20, AutofocusColoring=True)
     
+    #Attributes for autofocus logic.
+    group af_logic multiple:
+        attribute afm null #This attribute controls whether automatic control of the mouths takes place or not.  Add this tag to a character to enable automatic mouth control, remove it to disable it.
+        attribute afz null #This attribute controls whether automatic control of zorder takes place or not.  Add this tag to a character to enable automatic zorder control, remove it to disable it.
+        
     group autofocus_coloring:
         attribute day default null
         attribute dawn null
         attribute sunset null
         attribute night null
         attribute evening null
+        attribute rain null
     
     group outfit:
         attribute uniform default null
@@ -705,7 +711,12 @@ layeredimage natsuki cross:
     
     #This makes the sprite one single texture, instead of multiple textures on top of each other.
     #This fixes certain problems like alpha fadein/fadeout looking strange, at the cost of some performance.
-    at AutofocusDisplayable(name="natsuki", AutofocusDropShadow_blur=20, AutofocusColoring=True)
+    at Flatten
+    
+    #Attributes for autofocus logic.
+    group af_logic multiple:
+        attribute afm null #This attribute controls whether automatic control of the mouths takes place or not.  Add this tag to a character to enable automatic mouth control, remove it to disable it.
+        attribute afz null #This attribute controls whether automatic control of zorder takes place or not.  Add this tag to a character to enable automatic zorder control, remove it to disable it.
     
     group outfit:
         attribute uniform default null
@@ -754,8 +765,8 @@ layeredimage natsuki cross:
     group head: #This needs to render below her body for her "cross" pose.
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         attribute ff default:
             paths.natsuki("bases", "face_forward")
@@ -783,8 +794,8 @@ layeredimage natsuki cross:
     group nose if_all(["ff"]) if_not(["fta","fs"]):
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         ###Default nose/blush
         attribute nose default if_any(["nobl"]):
@@ -814,8 +825,8 @@ layeredimage natsuki cross:
     group mouth if_all(["ff"]) if_not(["fta","fs"]):
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         ###Default Closed Mouths:
         attribute cm default if_any(["happ","sedu","nerv"]):
@@ -895,8 +906,8 @@ layeredimage natsuki cross:
     group eyes if_all(["ff"]) if_not(["fta","fs"]):
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         ###Default Opened eyes:
         attribute oe default if_any(["neut","happ","laug","pout","curi"]):
@@ -974,8 +985,8 @@ layeredimage natsuki cross:
     group brows if_all(["ff"]) if_not(["fta","fs"]): #eyebrows.
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         #Default Eyebrows:
         attribute brow default if_any(["neut","dist","sedu"]):
@@ -997,8 +1008,8 @@ layeredimage natsuki cross:
     group brows:#In case you're wondering why there's no if_all or if_not logic on this group line, it's because the attributes below explicitly use the same logic - and if you have a group and an attribute both using the same logic tag, the attribute one will COMPLETELY overwrite and ignore the group logic.  It took me way too long to figure this out.
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         attribute brow default if_any(["vang"]) if_all(["ff","oe"]) if_not(["fta","fs","ce"]):
             "nat_ff_b1d"
@@ -1022,8 +1033,8 @@ layeredimage natsuki cross:
     group brows:
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         ###All eyebrows - truncated tags:
         attribute b1a if_all(["ff"]) if_not(["fta","fs"]):
@@ -1064,8 +1075,8 @@ layeredimage natsuki cross:
     group special if_all(["ff"]) if_not(["fta","fs"]):
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         attribute s_scream:
             paths.natsuki("bases", "face_special_scream")
@@ -1079,8 +1090,8 @@ layeredimage natsuki cross:
     group nose if_all(["fs"]) if_not(["ff","fta"]):
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         #Default nose/blush.
         attribute nose default if_any(["nobl"]):
@@ -1113,8 +1124,8 @@ layeredimage natsuki cross:
     group mouth if_all(["fs"]) if_not(["ff","fta"]):
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         #Closed mouths
         attribute cm default if_any(["neut"]):
@@ -1142,8 +1153,8 @@ layeredimage natsuki cross:
     group eyes if_all(["fs"]) if_not(["ff","fta","n5","bful"]): #Cannot show if full-face blush is present.
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         #Open eyes
         attribute oe default if_any(["neut"]):
@@ -1181,9 +1192,9 @@ layeredimage natsuki cross:
     group eyebrows if_all(["fs"]) if_not(["ff","fta","n5","bful"]): #Cannot show if full-face blush is present.
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
-        
+        xoffset (36)
+        yoffset (43)
+
         #default brows
         attribute brow default if_any(["neut"]):
             "nat_fs_b1"
@@ -1195,8 +1206,8 @@ layeredimage natsuki cross:
     group brows:#Required separate group definition because of additional logic for showing these particular eyebrows.
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         attribute brow default if_any(["cry"]) if_all(["fs","oe"]) if_not(["ff","fta","n5","bful","ce"]):
             "nat_fs_b3"
@@ -1208,8 +1219,8 @@ layeredimage natsuki cross:
     group eyebrows if_all(["fs"]) if_not(["ff","fta","n5","bful"]): #Cannot show if full-face blush is present.
         
         anchor (0,0) subpixel (True)
-        xoffset (18)
-        yoffset (22)
+        xoffset (36)
+        yoffset (43)
         
         #All eyebrows - truncated tags:
         attribute b1:
@@ -1218,3 +1229,107 @@ layeredimage natsuki cross:
             "nat_fs_b2"
         attribute b3:
             "nat_fs_b3"
+
+
+
+# ANIMATIONS | АНИМАЦИИ (MADE BY NEKOLAIS) #
+
+image natsuki l_arm:
+    "mod_assets/MPT/natsuki/extras/l_arm.png"
+    i11
+    subpixel True rotate_pad False rotate 0 yoffset 0 yalign 0.57 xalign 0.5
+    parallel:
+        easein 0.075 yoffset 10
+        ease_quad 0.75 yoffset 0
+        repeat
+    parallel:
+        ease 0.75+0.075 rotate -5 xalign 0.495 yalign 0.58
+        ease 0.75+0.075 rotate 0 xalign 0.5 yalign 0.57
+        repeat
+
+
+image natsuki r_arm:
+    "mod_assets/MPT/natsuki/extras/r_arm.png"
+    i11
+    subpixel True rotate_pad False rotate 0 yoffset 0 yalign 0.57 xalign 0.5
+    parallel:
+        easein 0.075 yoffset 10
+        ease_quad 0.75 yoffset 0
+        repeat
+    parallel:
+        ease 0.75+0.075 rotate 5 xalign 0.5 yalign 0.6
+        ease 0.75+0.075 rotate 1 xalign 0.5 yalign 0.57
+        repeat
+
+image natsuki body:
+    "mod_assets/MPT/natsuki/extras/body.png"
+    i11
+    subpixel True yoffset 0
+    block:
+        easein 0.075 yoffset 10
+        ease_quad 0.75 yoffset 0
+        repeat
+image eyes_a:
+    "mod_assets/MPT/natsuki/natsuki_ff_eyes_e1a.png"
+image eye_blink:
+    alpha 0.0
+    renpy.random.randint(20, 100)*0.1
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.065
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.095
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        alpha 0.0
+        0.15
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    repeat
+image natsuki anim_head:
+    Fixed("mod_assets/MPT/natsuki/extras/natsuki_face_forward.png",
+        "mod_assets/MPT/natsuki/natsuki_ff_nose_n1.png",
+        "mod_assets/MPT/natsuki/natsuki_ff_mouth_me.png",
+        "eyes_a",
+        "eye_blink",
+        "mod_assets/MPT/natsuki/natsuki_ff_eyebrows_b1c.png", fit_first=True)
+    i11
+    subpixel True rotate_pad False rotate 0 yoffset 0
+    parallel:
+        block:
+            easein 0.075 rotate -4 yoffset 35 + 5
+            ease_quad 0.75 rotate 0 yoffset 0
+            repeat
+
+image natsuki anim = Fixed("natsuki l_arm", "natsuki r_arm",
+                        "natsuki body", "natsuki anim_head")

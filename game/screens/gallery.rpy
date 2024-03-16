@@ -253,3 +253,4 @@ screen preview():
         action Function(next_image)
 
     on "replaced" action With(Dissolve(0.5))
+ 

@@ -40,14 +40,27 @@ init -200 python:
         def sayori(self, part: str, filename:str) -> str:
             return f"{self._base_path}/sayori/{part}/{filename}.{self._file_format}"
         
+        @dispatch(str, str, str)
+        def kozue(self, part: str, type: str, filename:str) -> str:
+            return f"{self._base_path}/kozue/{part}/{type}/{filename}.{self._file_format}"
+        
+        @dispatch(str, str)
+        def kozue(self, part: str, filename:str) -> str:
+            return f"{self._base_path}/kozue/{part}/{filename}.{self._file_format}"
+
+        @dispatch(str, str)
+        def nikolay(self, part: str, filename:str) -> str:
+            return f"{self._base_path}/nikolay/{part}/{filename}.{self._file_format}"
+
+        @dispatch(str, str, str)
+        def nikolay(self, part: str, type: str, filename:str) -> str:
+            return f"{self._base_path}/nikolay/{part}/{type}/{filename}.{self._file_format}"
+        
+
         @dispatch(str, str)
         def bg(self, part: str, filename:str) -> str:
             return f"{self._base_path}/bg/{part}/{filename}.{self._file_format}"
-        
-        @dispatch(str, str, str)
-        def bg(self, part: str, type: str, filename:str) -> str:
-            return f"{self._base_path}/bg/{part}/{type}/{filename}.{self._file_format}"
-        
+
 
     paths = Paths()
 
