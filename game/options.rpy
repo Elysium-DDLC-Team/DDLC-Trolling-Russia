@@ -13,7 +13,7 @@ define config.name = "DDLC: The Trolling Russia the Definitive Edition"
 define gui.show_name = True
 
 # This controls the version number of your mod.
-define config.version = "1.0"
+define config.version = "0.5"
 
 # This adds information about your mod in the About screen.
 # DDLC does not have a 'About' screen so you can leave this blank.

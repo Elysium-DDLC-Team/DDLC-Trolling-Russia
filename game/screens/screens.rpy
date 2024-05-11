@@ -77,8 +77,8 @@ style input:
     color gui.accent_color
 
 style splash_text:
-    size 24
-    color "#000"
+    size 34
+    color "#000000"
     font gui.default_font
     text_align 0.5
     outlines []
@@ -965,7 +965,7 @@ style confirm_frame:
     yalign .5
 
 style confirm_prompt_text:
-    color "#000"
+    color "#fff"
     outlines []
     text_align 0.5
     layout "subtitle"

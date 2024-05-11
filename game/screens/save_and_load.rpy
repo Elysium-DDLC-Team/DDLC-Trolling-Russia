@@ -121,7 +121,7 @@ style page_label:
     ypadding 3
 
 style page_label_text:
-    color "#000"
+    color "#fff"
     outlines []
     text_align 0.5
     layout "subtitle"
@@ -141,5 +141,5 @@ style slot_button:
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
-    color "#666"
+    color "#fff"
     outlines []
