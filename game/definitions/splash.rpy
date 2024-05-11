@@ -599,8 +599,6 @@ label autoload:
         main_menu = False
         _in_replay = None
 
-    # if persistent.yuri_kill > 0 and persistent.autoload == "yuri_kill_2":
-    #     $ persistent.yuri_kill += 200
 
     if renpy.get_return_stack():
         $ renpy.pop_call()

@@ -61,6 +61,14 @@ init -200 python:
         def bg(self, part: str, filename:str) -> str:
             return f"{self._base_path}/bg/{part}/{filename}.{self._file_format}"
 
+        @dispatch(str, str)
+        def nsmonika(self, part: str, filename:str) -> str:
+            return f"{self._base_path}/Non-Sentient Monika/{part}/{filename}.{self._file_format}"
+
+        @dispatch(str, str, str)
+        def nsmonika(self, part: str, type: str, filename:str) -> str:
+            return f"{self._base_path}/Non-Sentient Monika/{part}/{type}/{filename}.{self._file_format}"
+
 
     paths = Paths()
 
