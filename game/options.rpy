@@ -119,7 +119,7 @@ init python:
     config.replace_text = replace_text
 
     def game_menu_check():
-        if quick_menu: renpy.call_in_new_context('_game_menu')
+        if quickMenu: renpy.call_in_new_context('_game_menu')
 
     config.game_menu_action = game_menu_check
 

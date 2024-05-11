@@ -9,6 +9,8 @@
 init -2 python:
     # This sets the resolution of DDLC to 1280x720p
     gui.init(1920, 1080)
+init -3 python:
+    import mrs
 
 ## GUI Sounds
 # These variables set the sound effects for the GUI elements in the game.
@@ -90,11 +92,11 @@ define -2 gui.game_menu_background = "cg movie ricardo flexing"
 # These variables set the dialogue box positions and placement in-game.
 
 # This controls the height of the textbox containing dialogue.
-define -2 gui.textbox_height = 182
+define -2 gui.textbox_height = 282
 
 # This controls the placement of the textbox vertically on the screen. 
 # 0.0 is the top, 0.5 is the center, and 1.0 is the bottom.
-define -2 gui.textbox_yalign = 0.99
+define -2 gui.textbox_yalign =  1.0
 
 # This controls the placement of the speaking character's name.
 define gui.name_xpos = 525
@@ -116,7 +118,7 @@ define gui.namebox_borders = Borders(15, 15, 15, 2)
 define gui.namebox_tile = False
 
 # This controls the placement of dialogue relative to the textbox.
-define gui.text_xpos = 402
+define gui.text_xpos = 202
 define gui.text_ypos = 5
 
 # This controls the maximum width of dialogue text.

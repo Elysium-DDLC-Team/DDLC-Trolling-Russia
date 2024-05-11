@@ -30,7 +30,7 @@ image poem_end = ConditionSwitch(
 # To use this, use 'call poem_special(X)' where X is the poem number to show from
 # the poem list above.
 label poem_special(poem=1):
-    $ quick_menu = False
+    $ quickMenu = False
     play sound page_turn
 
     if poem == 7:
@@ -46,7 +46,7 @@ label poem_special(poem=1):
         show poem_special7b as ps
         $ pause(0.01)
 
-    $ quick_menu = True
+    $ quickMenu = True
     return
 
 # Backwards Compatibility

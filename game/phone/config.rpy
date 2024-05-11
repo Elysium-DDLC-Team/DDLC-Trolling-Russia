@@ -9,7 +9,7 @@ python early in phone.config:
     overlay_screens = [ ]
 
     # Do we use the game's quick menu or the phone's quick menu during phone calls?
-    quick_menu = True
+    quickMenu = True
 
     # A transition used when showing the phone.
     enter_transition = Dissolve(0.6, time_warp=_warper.ease)

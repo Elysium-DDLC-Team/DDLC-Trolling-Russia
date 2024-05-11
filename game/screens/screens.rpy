@@ -192,7 +192,7 @@ screen say(who, what):
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 
-    use quick_menu
+    use  quickMenu
 
 
 style window is default
@@ -244,11 +244,15 @@ style say_dialogue:
     layout ("subtitle" if gui.text_xalign else "tex")
 
 image ctc:
-    xalign 0.81 yalign 0.98 xoffset -5 alpha 0.0 subpixel True
-    "gui/ctc.png"
+    "mod_assets/roll1.png"
+    zoom 0.1
+    subpixel True
+    #yoffset -5
+    #xoffset -5
     block:
-        easeout 0.75 alpha 1.0 xoffset 0
-        easein 0.75 alpha 0.5 xoffset -5
+        #xanchor 0.5 yanchor 0.5
+        rotate 0
+        linear 6.0 rotate 360
         repeat
 
 ## Input screen ################################################################
@@ -402,48 +406,141 @@ screen rigged_choice(items):
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
-screen quick_menu():
-
-    # Ensure this appears on top of other screens.
+screen quickMenu():
     zorder 100
+    python:
+        try:
+            quickMenu
+        except NameError:
+            quickMenu = False
 
-    if quick_menu:
+    if quickMenu:
 
-        # Add an in-game quick menu.
-        hbox:
+        vbox:
             style_prefix "quick"
 
-            xalign 0.5
-            yalign 0.995
+            xalign 0.95
+            yalign 0.95
 
-            #textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Load") action ShowMenu('load')
-            #textbutton _("Q.Save") action QuickSave()
-            #textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Settings") action ShowMenu('preferences')
+            hbox:
+                imagebutton:
+                    idle "historyIdle" 
+                    hover "historyHover"
+                    hovered Show('QuickBtn_history') 
+                    unhovered Hide('QuickBtn_history') 
+                    action ShowMenu('history')
 
+                imagebutton:
+                    idle "skipIdle"
+                    hover "skipHover"
+                    hovered Show('QuickBtn_skip') 
+                    unhovered Hide('QuickBtn_skip') 
+                    action Skip() alternate Skip(fast=True, confirm=True)
 
-## This code ensures that the quick_menu screen is displayed in-game, whenever
-## the player has not explicitly hidden the interface.
-#init python:
-#    config.overlay_screens.append("quick_menu")
+                imagebutton:
+                    idle "autoIdle"
+                    hover "autoHover" 
+                    hovered Show('QuickBtn_auto') 
+                    unhovered Hide('QuickBtn_auto') 
+                    action Preference("auto-forward", "toggle")
 
-default quick_menu = True
+            hbox:
+                imagebutton:
+                    idle "saveIdle"
+                    hover "saveHover"
+                    hovered Show('QuickBtn_save') 
+                    unhovered Hide('QuickBtn_save')  
+                    action ShowMenu('save')
 
-#style quick_button is default
-#style quick_button_text is button_text
-
+                imagebutton:
+                    idle "loadIdle"
+                    hover "loadHover" 
+                    hovered Show('QuickBtn_load') 
+                    unhovered Hide('QuickBtn_load')  
+                    action ShowMenu('load')
+                    
+                imagebutton:
+                    idle "settingsIdle"
+                    hover "settingsHover" 
+                    hovered Show('QuickBtn_settings') 
+                    unhovered Hide('QuickBtn_settings') 
+                    action ShowMenu('preferences')
+    
 style quick_button:
-    properties gui.button_properties("quick_button")
+    properties mrs.button_properties("quick_button", "mod_assets/UI")
     activate_sound gui.activate_sound
 
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
     outlines []
+# hovered screens 
+screen QuickBtn_auto:
+    text "{size=15}{color=#969CAA}Auto" align(.88, .985)
+
+screen QuickBtn_history:
+    text "{size=15}{color=#969CAA}History" align(.89, .985)
+
+screen QuickBtn_skip:
+    text "{size=15}{color=#969CAA}Skip" align(.88, .985)
+
+screen QuickBtn_load:
+    text "{size=15}{color=#969CAA}Load" align(.88, .985)
+
+screen QuickBtn_save:
+    text "{size=15}{color=#969CAA}Save" align(.88, .985)
+    
+screen QuickBtn_settings:
+    text "{size=15}{color=#969CAA}Settings" align(.89, .985)
+
+layeredimage QuickBtn:
+    
+    always:
+        "mod_assets/UI/QuickMenu/shadowBtn.png"
+    always:
+        "mod_assets/UI/QuickMenu/Btn.png"
+
+    group icon:
+        attribute Auto:
+            "mod_assets/UI/QuickMenu/autoBtn.png"
+        attribute History:
+            "mod_assets/UI/QuickMenu/historyBtn.png"
+        attribute Skip:
+            "mod_assets/UI/QuickMenu/skipBtn.png"
+        attribute Settings:
+            "mod_assets/UI/QuickMenu/settingsBtn.png"
+        attribute Load:
+            "mod_assets/UI/QuickMenu/loadBtn.png"
+        attribute Save:
+            "mod_assets/UI/QuickMenu/saveBtn.png"
+        attribute Auto_hover:
+            "mod_assets/UI/QuickMenu/autoBtn_hover.png"
+        attribute History_hover:
+            "mod_assets/UI/QuickMenu/historyBtn_hover.png"
+        attribute Skip_hover:
+            "mod_assets/UI/QuickMenu/skipBtn_hover.png"
+        attribute Settings_hover:
+            "mod_assets/UI/QuickMenu/settingsBtn_hover.png"
+        attribute Load_hover:
+            "mod_assets/UI/QuickMenu/loadBtn_hover.png"
+        attribute Save_hover:
+            "mod_assets/UI/QuickMenu/saveBtn_hover.png"
+
+
+init python:
+
+    renpy.image("historyIdle", "QuickBtn History")
+    renpy.image("autoIdle", "QuickBtn Auto")
+    renpy.image("skipIdle", "QuickBtn Skip")
+    renpy.image("saveIdle", "QuickBtn Save")
+    renpy.image("loadIdle", "QuickBtn Load")
+    renpy.image("settingsIdle", "QuickBtn Settings")
+    renpy.image("historyHover", "QuickBtn History_hover")
+    renpy.image("autoHover", "QuickBtn Auto_hover")
+    renpy.image("skipHover", "QuickBtn Skip_hover")
+    renpy.image("saveHover", "QuickBtn Save_hover")
+    renpy.image("loadHover", "QuickBtn Load_hover")
+    renpy.image("settingsHover", "QuickBtn Settings_hover")
+
 
 
 ################################################################################

@@ -15,8 +15,8 @@ screen phone_call(video=False):
         else:
             use _phone_call()
     
-    if not phone.config.quick_menu and quick_menu:
-        use quick_menu()
+    if not phone.config.quick_menu and quickMenu:
+        use quickMenu()
 
 screen _phone_call():
     style_prefix "phone_call"
@@ -28,7 +28,7 @@ screen _phone_call():
     frame:            
         add phone.calls._current_caller.icon at _fits(None)
 
-    if phone.config.quick_menu and quick_menu:
+    if phone.config.quick_menu and quickMenu:
         frame style "empty" xalign 0.5 ypos 0.45:
             use phone_quick_menu()
 

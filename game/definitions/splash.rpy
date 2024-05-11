@@ -313,7 +313,7 @@ label splashscreen:
             $ persistent.lockdown_warning = True
 
     if not persistent.first_run:
-        $ quick_menu = False
+        $ quickMenu = False
         scene white
         pause 0.5
         scene tos

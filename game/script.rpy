@@ -16,7 +16,7 @@ label start:
     $ ia_name = "Я и Шурик"
     $ ch_name = "Человек"
     $ nat_name = "Официантка"
-    $ quick_menu = True
+    $ quickMenu = True
     $ style.say_dialogue = style.normal
     $ allow_skipping = True
     $ config.allow_skipping = True

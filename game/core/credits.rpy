@@ -438,7 +438,7 @@ label credits:
 
     # These variable declarations makes it so the player can't skip or access the 
     # quick menu in the credits file
-    $ quick_menu = False
+    $ quickMenu = False
     $ config.skipping = False
     $ config.allow_skipping = False
 
@@ -718,7 +718,7 @@ label credits2:
         $ config.keymap['game_menu'] = []
         $ config.keymap['hide_windows'] = []
         $ renpy.display.behavior.clear_keymap_cache()
-        $ quick_menu = False
+        $ quickMenu = False
         $ config.skipping = False
         $ config.allow_skipping = False
 
