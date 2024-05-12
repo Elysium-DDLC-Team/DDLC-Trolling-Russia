@@ -480,20 +480,21 @@ label splashscreen:
     show white
     $ persistent.ghost_menu = False
     $ splash_message = splash_message_default
-    $ config.main_menu_music = audio.ugotthat
-    $ renpy.music.play(config.main_menu_music)
+    #$ config.main_menu_music = audio.ugotthat
+    #$ renpy.music.play(config.main_menu_music)
+    play music "mod_assets/audio/music/UGotThatLittleV.mp3" fadein 0.5
     show intro with Dissolve(0.5, alpha=True)
-    $ pause(1.75)
+    $ pause(1)
     hide intro with Dissolve(0.5, alpha=True)
     show splash_et with Dissolve(0.5, alpha=True)
-    $ pause(1.75)
+    $ pause(1.5)
     hide splash_et with Dissolve(0.5, alpha=True)
     if persistent.playthrough == 2 and renpy.random.randint(0, 3) == 0:
         $ splash_message = renpy.random.choice(splash_messages)
     show splash_warning "[splash_message]" with Dissolve(0.5, alpha=True)
-    $ pause(1.5)
+    $ pause(0.75)
     hide splash_warning with Dissolve(0.5, alpha=True)
-    $ pause(0.5)
+    $ pause(0.3)
     $ config.allow_skipping = True
     return
 
