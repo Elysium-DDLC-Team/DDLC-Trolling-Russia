@@ -483,8 +483,11 @@ label splashscreen:
     $ config.main_menu_music = audio.ugotthat
     $ renpy.music.play(config.main_menu_music)
     show intro with Dissolve(0.5, alpha=True)
-    $ pause(2.5)
+    $ pause(1.75)
     hide intro with Dissolve(0.5, alpha=True)
+    show splash_et with Dissolve(0.5, alpha=True)
+    $ pause(1.75)
+    hide splash_et with Dissolve(0.5, alpha=True)
     if persistent.playthrough == 2 and renpy.random.randint(0, 3) == 0:
         $ splash_message = renpy.random.choice(splash_messages)
     show splash_warning "[splash_message]" with Dissolve(0.5, alpha=True)
@@ -565,23 +568,23 @@ label after_load:
     ## use a 'elif' here than 'if' if you uncommented the code above.
     ## This statement checks if the anticheat number is equal to the 
     ## anticheat number in the save file, else it errors out.
-    if anticheat != persistent.anticheat:
-        stop music
-        scene black
-        "The save file could not be loaded."
-        "Are you trying to cheat?"
-        $ m_name = "Monika"
-        show monika 1 at t11
-        if persistent.playername == "":
-            m "You're so funny."
-        else:
-            m "You're so funny, [persistent.playername]."
-        $ renpy.utter_restart()
-    else:
-        if persistent.playthrough == 0 and not persistent.first_load and not config.developer:
-            $ persistent.first_load = True
-            call screen dialog("Hint: You can use the \"Skip\" button to\nfast-forward through text you've already read.", ok_action=Return())
-    return
+    #if anticheat != persistent.anticheat:
+    #    stop music
+    #    scene black
+    #    "The save file could not be loaded."
+    #    "Are you trying to cheat?"
+    #    $ m_name = "Monika"
+    #    show monika 1 at t11
+    #    if persistent.playername == "":
+    #        m "You're so funny."
+    #    else:
+    #        m "You're so funny, [persistent.playername]."
+    #    $ renpy.utter_restart()
+    #else:
+    #    if persistent.playthrough == 0 and not persistent.first_load and not config.developer:
+    #        $ persistent.first_load = True
+    #        call screen dialog("Hint: You can use the \"Skip\" button to\nfast-forward through text you've already read.", ok_action=Return())
+    #return
 
 ## This label loads the label saved in the autoload variable. 
 label autoload:

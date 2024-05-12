@@ -18,6 +18,10 @@ define -2 gui.hover_sound = "gui/sfx/hover.ogg" # Hover Sound Effect
 define -2 gui.activate_sound = "gui/sfx/select.ogg" # Click Sound Effect
 define -2 gui.activate_sound_glitch = "gui/sfx/select_glitch.ogg" # Glitched Sound Effect
 
+# GUI Imagessssss
+
+image splash_et = "gui/Elysium-Logo-Blue-Splash.png"
+
 ## Colors!
 # These variables set the color for DDLC's text in-game.
 
