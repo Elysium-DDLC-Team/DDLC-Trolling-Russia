@@ -94,7 +94,9 @@ define s = DynamicCharacter('s_name', image='sayori', what_prefix='"', what_suff
 define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="nestled")
 define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="nestled")
 define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="nestled")
-define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="nestled")
+define ny = Character('friends_name', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="nestled")
+define r = DynamicCharacter('r_name', image='ricardo', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="nestled")
+define sh = DynamicCharacter('sh_name', image='shurik', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="nestled")
 
 # This variable determines whether to allow the player to dismiss pauses.
 # By default this is set by config.developer which is normally set to false
@@ -165,10 +167,19 @@ default faint_effect = None
 # To define a default name make a character name variable like in this example:
 #   default e_name = "Eileen"
 
-default s_name = "Sayori"
-default m_name = "Monika"
-default n_name = "Natsuki"
-default y_name = "Yuri"
+#default s_name = "Сайори"
+#default m_name = "Моника"
+#default n_name = "Нацуки"
+#default y_name = "Юри"
+#default na_name = "Наоки"
+#default sh_name = "Шурик"
+#default m_name = "Моника"
+#default r_name = "Рикардо"
+#default friends_name = "Друзья"
+#default girls_name = "Девочки"
+#default ia_name = "Я и Шурик"
+#default ch_name = "Человек"
+#default nat_name = "Официантка"
 
 # Poem Variables
 # This section records how much each character likes your poem in-game.

@@ -7,7 +7,7 @@ label start:
     $ _dismiss_pause = config.developer
     # Each of the girls' names before the MC learns their name throughout ch0.
     $ n_name = "Наоки"
-    $ s_name = "Шурик"
+    $ sh_name = "Шурик"
     $ m_name = "Моника"
     $ r_name = "Рикардо"
     $ y_name = "Юри"

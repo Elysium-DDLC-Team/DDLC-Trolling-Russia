@@ -84,16 +84,20 @@ style navigation_button_text:
 
 screen hover1:
     text "{color=#0095FF}Click this button and you'll begin the unforgettable story of three friends!" align(.75, .05) at show_clicks
+    on "show" action [Hide("hover2"), Hide("hover3"), Hide("hover4")]
     
 screen hover2:
     text "{color=#0095FF}Ты сможешь загрузится с того места, где закончил в прошлый раз." align(.75, .05) at show_clicks
-    
+    on "show" action [Hide("hover1"), Hide("hover3"), Hide("hover4")]
+
 screen hover3:
     text "{color=#0095FF}Настрой свои ботинки, надень топовую красную бандану Рико,\nтрусы с флагом США и вперёд флексить!" align(.75, .05) at show_clicks
-    
+    on "show" action [Hide("hover1"), Hide("hover2"), Hide("hover4")]
+
 screen hover4:
     text "{color=#0095FF}Открытые треки." align(.75, .05) at show_clicks
-    
+    on "show" action [Hide("hover1"), Hide("hover2"), Hide("hover3")]
+
 transform show_clicks:
     zoom 1.00
     easein .25 alpha 1.00 zoom 1.05
