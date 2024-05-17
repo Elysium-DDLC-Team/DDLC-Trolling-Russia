@@ -16,6 +16,8 @@ label start:
     $ ia_name = "Я и Шурик"
     $ ch_name = "Человек"
     $ nat_name = "Официантка"
+    $ d_name = "?"
+    $ dev_name = "?"
     $ quickMenu = True
     $ style.say_dialogue = style.normal
     $ allow_skipping = True
@@ -110,10 +112,10 @@ label modDay1:
     "Наоки - тихоня, но любит проказничать, пытаясь найти приключение на свою жопу."
     "Причём так, что просто начинает смешить или пугать."
     #hide naoki
-    #show syric at t11 zorder 2
+    #show shurik at t11 zorder 2
     "Шурик - практически такая же херня как и я."
     "Только он вспыльчивый, как динамит, и простофиля."
-    #hide syric
+    #hide shurik
     "А я скромный и скрытый юморист."
     "Сразу вспомнили Фэйса, да?"
     "Не надо мне этого говорить, ну годнота же верно?"
@@ -126,10 +128,10 @@ label modDay1:
     "Думаю дальше полным ходом всё пойдёт."
     play sound "mod_assets/audio/sfx/birds1.mp3" loop
     mc "Пацаны! Здарова нахуй!"
-    #show syric at t11 zorder 2
+    #show shurik at t11 zorder 2
     s "Здарова [player]!"
     "Мы обжали наши руки дружеским рукожатием, от которого был характерный хлопок."
-    #show syric at t22 zorder 2
+    #show shurik at t22 zorder 2
     #show naoki 1ba at t21 zorder 2
     n "Ну привет."
     "Наоки сделал аналогичное рукопожатие и стал рядом."
@@ -154,7 +156,7 @@ label modDay1:
     "Мы достали по одной бутылке пива и открыли бутылки"
     play sound "mod_assets/audio/sfx/birds1.mp3" loop
     #show naoki 42ba at t21 zorder 3
-    #show syric 41 at t22 zorder 2
+    #show shurik 41 at t22 zorder 2
     "Эти звуки открывающихся бутылок."
     "Это наверно самое приятные звуки перед весельем."
     "А какие звуки будут после, я не знаю."
@@ -206,7 +208,7 @@ label modDay1:
     scene bg ff
     with dissolve
     #show naoki 1ba at t22 zorder 2
-    #show syric at t21 zorder 2
+    #show shurik at t21 zorder 2
     "Атмосфера бани поднимала настроение."
     "Когда ты в неё входишь, ты уже понимаешь, что будет весело или по крайне мере хорошо."
     "Это происходит как правило по привычке."
@@ -253,7 +255,7 @@ label modDay1:
     mc "Эй!"
     mc "Если кто-то и будет примерять - то это ты!"
     #show naoki 5a at t22 zorder 2
-    #show syric 012 at t21 zorder 2
+    #show shurik 012 at t21 zorder 2
     "Мы разделись и надели полотенца."
     mc  "А перед входом надо ещё выпить."
     "Уж если мы обречены, то лучше этот страх запить."
@@ -280,7 +282,7 @@ label modDay1:
     "Мы вошли внутрь рая."
     scene bania with dissolve
     #show naoki 5a at t22 zorder 2
-    #show syric 012 at t21 zorder 2
+    #show shurik 012 at t21 zorder 2
     "Это место где можно париться, мыться, а главное бухать."
     "Мест много тут, жадничать не стоит."
     "Всем всё хватит."
@@ -625,10 +627,10 @@ label modDay1:
     with dissolve
     stop music
     #show naoki 1ba t21 zorder 2
-    #show syric 1 at t22 zorder 2
+    #show shurik 1 at t22 zorder 2
     "Мы шли домой в свой одежде."
     mc " Боже мой!"
-    #show syric 2 at t22 zorder 2
+    #show shurik 2 at t22 zorder 2
     s "Очко болит!"
     n 12bg "Лучше бы мы в женской остались!"
     "ЭТО ФИАСКО БРАТАН!?"
@@ -639,7 +641,7 @@ label modDay1:
     mc " Ладно давайте... Пока."
     $ d_name ="Друзья"
     d "Пока [player]."
-    hide syric
+    hide shurik
     hide naoki
     "Недовольные задницы - это всё что осталось от меня и от них."
     "И вид у них был довольно обескураженный."
